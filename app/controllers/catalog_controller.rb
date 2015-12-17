@@ -21,5 +21,6 @@ class CatalogController < ApplicationController
     config.add_sort_field 'relevance', sort: 'score desc', label: 'Relevance'
 
     config.add_field_configuration_to_solr_request!
+    config.per_page = [10]
   end
 end
