@@ -1,0 +1,57 @@
+<div class="col-md-9">
+  <% if (current_user && current_user.exhibits.any?) || can?(:manage, Spotlight::Exhibit) %>
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#published" aria-controls="published" role="tab" data-toggle="tab"><%= t('.published') %></a></li>
+    <% if can?(:manage, Spotlight::Exhibit) %>
+    <li role="presentation"><a href="#unpublished" aria-controls="unpublished" role="tab" data-toggle="tab"><%= t('.unpublished') %></a></li>
+    <% end %>
+    <% if current_user && current_user.exhibits.any? %>
+    <li role="presentation"><a href="#user" aria-controls="user" role="tab" data-toggle="tab"><%= t('.user') %></a></li>
+    <% end %>
+  </ul>
+  <% end %>
+  <div class="tab-content">
+
+    <%= cache cache_key_for_spotlight_exhibits do %>
+      <% Award.group('year').order('year desc').count.each do |year, c | %>
+        <h1><%= "#{year}" %></h1>
+
+        <div role="tabpanel" class="tab-pane active" id="published">
+          <% if @exhibits.published.none? %>
+            <%= render 'missing_exhibits' %>
+          <% end %>
+
+          <% @exhibits.published.joins('INNER JOIN awards ON awards.exhibit_id = spotlight_exhibits.id AND awards.year = ', year).each_slice(3).each do |row| %>
+          <div class="row"><!-- start main content row -->
+            <%= render collection: row, partial: 'exhibit_card', as: 'exhibit' %>
+          </div>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+
+    <% if @exhibits.unpublished.accessible_by(current_ability).any? %>
+    <div role="tabpanel" class="tab-pane" id="unpublished">
+      <% @exhibits.unpublished.accessible_by(current_ability).each_slice(3).each do |row| %>
+      <div class="row"><!-- start main content row -->
+        <%= render collection: row, partial: 'exhibit_card', as: 'exhibit' %>
+      </div>
+      <% end %>
+    </div>
+    <% end %>
+
+    <% if current_user && current_user.exhibits.any? %>
+    <div role="tabpanel" class="tab-pane" id="user">
+      <% current_user.exhibits.each_slice(3).each do |row| %>
+      <div class="row"><!-- start main content row -->
+        <%= render collection: row, partial: 'exhibit_card', as: 'exhibit' %>
+      </div>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+<aside class="col-md-3">
+  <%= render "shared/site_sidebar" %>
+</aside>
