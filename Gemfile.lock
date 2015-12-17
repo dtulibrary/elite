@@ -1,9 +1,9 @@
 GIT
   remote: git://github.com/curationexperts/spotlight.git
-  revision: 91347e6442c41b1d8e82bcbf39b117df33232ea2
+  revision: c6b05504b222e262832b7121805d824820c0e6ee
   branch: exhibit_controller_behavior
   specs:
-    blacklight-spotlight (0.13.0)
+    blacklight-spotlight (0.14.0)
       acts-as-taggable-on (~> 3.5)
       autoprefixer-rails
       blacklight (~> 5.16)
@@ -159,7 +159,7 @@ GEM
       actionmailer (>= 3.2.6, < 5)
       devise (>= 3.2.0)
     diff-lcs (1.2.5)
-    diffy (3.0.7)
+    diffy (3.1.0)
     erubis (2.7.0)
     execjs (2.6.0)
     extlib (0.9.16)
@@ -242,7 +242,7 @@ GEM
     multi_json (1.11.2)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
-    nokogiri (1.6.7)
+    nokogiri (1.6.7.1)
       mini_portile2 (~> 2.0.0.rc2)
     oauth2 (1.0.0)
       faraday (>= 0.8, < 0.10)
