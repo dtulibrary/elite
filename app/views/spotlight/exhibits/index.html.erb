@@ -21,7 +21,7 @@
             <%= render 'missing_exhibits' %>
           <% end %>
 
-          <% @exhibits.published.joins('INNER JOIN awards ON awards.exhibit_id = spotlight_exhibits.id AND awards.year = ', year).each_slice(3).each do |row| %>
+          <% @exhibits.published.joins('INNER JOIN awards ON awards.spotlight_exhibit_id = spotlight_exhibits.id AND awards.year = ', year).each_slice(3).each do |row| %>
           <div class="row"><!-- start main content row -->
             <%= render collection: row, partial: 'exhibit_card', as: 'exhibit' %>
           </div>

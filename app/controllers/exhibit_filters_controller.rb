@@ -5,7 +5,7 @@ class ExhibitFiltersController < ApplicationController
     unless @exhibit_filter.update(exhibit_filter_params)
       flash[:alert] = @exhibit_filter.errors.full_messages.join('<br/>'.html_safe)
     end
-    redirect_to spotlight.edit_exhibit_path @exhibit_filter.exhibit_id, anchor: 'filter'
+    redirect_to spotlight.edit_exhibit_path @exhibit_filter.spotlight_exhibit_id, anchor: 'filter'
   end
 
   def exhibit_filter_params
