@@ -8,6 +8,8 @@
 /.bundle
 .byebug_history
 public/uploads
+config/blacklight.yml
+config/secrets.yml
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
