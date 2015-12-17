@@ -1,7 +1,18 @@
 GIT
-  remote: git://github.com/curationexperts/spotlight.git
-  revision: c6b05504b222e262832b7121805d824820c0e6ee
-  branch: exhibit_controller_behavior
+  remote: git://github.com/dtulibrary/dtu_blacklight_common.git
+  revision: 6c13c06f6dcd025217281fe538b0c0153dd280cd
+  branch: blacklight5.16
+  specs:
+    dtu_blacklight_common (5.16.2)
+      blacklight (~> 5.16)
+      rails (~> 4.1)
+      solr_wrapper
+      twitter-typeahead-rails (~> 0.11)
+
+GIT
+  remote: git://github.com/ronan-mch/spotlight.git
+  revision: 503b7472224441c2433816455ea52bbaa9a9dc03
+  branch: dev
   specs:
     blacklight-spotlight (0.14.0)
       acts-as-taggable-on (~> 3.5)
@@ -35,17 +46,6 @@ GIT
       social-share-button (~> 0.1.5)
       tophat
       underscore-rails (~> 1.6)
-
-GIT
-  remote: git://github.com/dtulibrary/dtu_blacklight_common.git
-  revision: 6c13c06f6dcd025217281fe538b0c0153dd280cd
-  branch: blacklight5.16
-  specs:
-    dtu_blacklight_common (5.16.2)
-      blacklight (~> 5.16)
-      rails (~> 4.1)
-      solr_wrapper
-      twitter-typeahead-rails (~> 0.11)
 
 GEM
   remote: https://rubygems.org/

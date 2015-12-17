@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151217091336) do
+ActiveRecord::Schema.define(version: 20151217105136) do
+
+  create_table "awards", force: :cascade do |t|
+    t.string   "year"
+    t.integer  "exhibit_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "awards", ["exhibit_id"], name: "index_awards_on_exhibit_id"
 
   create_table "bookmarks", force: :cascade do |t|
     t.integer  "user_id",       null: false

@@ -52,7 +52,7 @@ end
 
 gem 'blacklight', '~> 5.16'
 gem 'blacklight-gallery'
-gem 'blacklight-spotlight', github: 'curationexperts/spotlight', branch: 'exhibit_controller_behavior'
+gem 'blacklight-spotlight', github: 'ronan-mch/spotlight', branch: 'dev'
 gem 'dtu_blacklight_common', github: 'dtulibrary/dtu_blacklight_common', branch: 'blacklight5.16'
 gem 'jettywrapper', '>= 2.0'
 gem 'rsolr', '~> 1.0.6'
