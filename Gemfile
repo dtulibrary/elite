@@ -60,3 +60,8 @@ gem 'devise'
 gem 'devise-guests', '~> 0.3'
 gem 'friendly_id'
 gem 'sitemap_generator'
+
+gem 'capistrano', '~> 3.1'
+gem 'capistrano-rails', '~> 1.1'
+gem 'capistrano-passenger', '~> 0.2'
+gem 'pg'
