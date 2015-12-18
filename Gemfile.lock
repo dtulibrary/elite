@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: git://github.com/ronan-mch/spotlight.git
-  revision: 1ed9052a3c697be286e198a4533924cf8f68791d
+  revision: 85960fa6700febf4de064a0d4597f5d4676a5c07
   branch: dev2
   specs:
     blacklight-spotlight (0.14.2)
