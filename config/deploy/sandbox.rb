@@ -4,8 +4,8 @@
 # You can define all roles on a single server, or split them:
 
 # server 'example.com', user: 'deploy', roles: %w{app db web}, my_property: :my_value
-server 'spotlight.ddf.dtic.dk', user: 'capistrano', roles: %w{app db web}
 # server 'db.example.com', user: 'deploy', roles: %w{db}
+server 'spotlight.ddf.dtic.dk', user: 'romc', roles: %w{app db web}
 set :rails_env, 'unstable'
 
 # role-based syntax

@@ -11,10 +11,10 @@ GIT
 
 GIT
   remote: git://github.com/ronan-mch/spotlight.git
-  revision: 503b7472224441c2433816455ea52bbaa9a9dc03
+  revision: ca2993603546a6b88292c36e536fed2fb227f242
   branch: dev
   specs:
-    blacklight-spotlight (0.14.0)
+    blacklight-spotlight (0.14.2)
       acts-as-taggable-on (~> 3.5)
       autoprefixer-rails
       blacklight (~> 5.16)
@@ -99,7 +99,7 @@ GEM
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    blacklight (5.17.0)
+    blacklight (5.17.1)
       bootstrap-sass (~> 3.2)
       deprecation
       kaminari (>= 0.15)
@@ -170,7 +170,7 @@ GEM
       warden (~> 1.2.3)
     devise-guests (0.3.3)
       devise
-    devise_invitable (1.5.3)
+    devise_invitable (1.5.5)
       actionmailer (>= 3.2.6, < 5)
       devise (>= 3.2.0)
     diff-lcs (1.2.5)
@@ -355,7 +355,7 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
-    signet (0.7.0)
+    signet (0.7.1)
       addressable (~> 2.3)
       faraday (~> 0.9)
       jwt (~> 1.5)
@@ -376,10 +376,10 @@ GEM
     sprockets (3.5.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
-    sprockets-rails (2.3.3)
-      actionpack (>= 3.0)
-      activesupport (>= 3.0)
-      sprockets (>= 2.8, < 4.0)
+    sprockets-rails (3.0.0)
+      actionpack (>= 4.0)
+      activesupport (>= 4.0)
+      sprockets (>= 3.0.0)
     sqlite3 (1.3.11)
     sshkit (1.8.1)
       net-scp (>= 1.1.2)
