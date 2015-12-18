@@ -22,7 +22,7 @@
           <% end %>
           <% count = 0 %>
           <div class="row"><!-- start main content row -->
-          <% @exhibits.tagged_with(year_tag.name).each do |exhibit| %>
+          <% Spotlight::Exhibit.tagged_with(year_tag.name).each do |exhibit| %>
             <% next unless exhibit.published? %>
             <% if count > 0 && count % 3 == 0 %>
               </div><div class="row">
