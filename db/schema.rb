@@ -11,16 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151217105136) do
-
-  create_table "awards", force: :cascade do |t|
-    t.string   "year"
-    t.integer  "spotlight_exhibit_id"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
-  end
-
-  add_index "awards", ["spotlight_exhibit_id"], name: "index_awards_on_spotlight_exhibit_id"
+ActiveRecord::Schema.define(version: 20151218100338) do
 
   create_table "bookmarks", force: :cascade do |t|
     t.integer  "user_id",       null: false
@@ -34,14 +25,6 @@ ActiveRecord::Schema.define(version: 20151217105136) do
 
   add_index "bookmarks", ["document_type", "document_id"], name: "index_bookmarks_on_document_type_and_document_id"
   add_index "bookmarks", ["user_id"], name: "index_bookmarks_on_user_id"
-
-  create_table "exhibit_filters", force: :cascade do |t|
-    t.integer "spotlight_exhibit_id"
-    t.string  "field"
-    t.string  "value"
-  end
-
-  add_index "exhibit_filters", ["spotlight_exhibit_id"], name: "index_exhibit_filters_on_spotlight_exhibit_id"
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -137,6 +120,16 @@ ActiveRecord::Schema.define(version: 20151217105136) do
     t.datetime "updated_at"
     t.string   "field_type"
   end
+
+  create_table "spotlight_exhibit_filters", force: :cascade do |t|
+    t.string   "field"
+    t.string   "value"
+    t.integer  "exhibit_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "spotlight_exhibit_filters", ["exhibit_id"], name: "index_spotlight_exhibit_filters_on_exhibit_id"
 
   create_table "spotlight_exhibits", force: :cascade do |t|
     t.string   "title",                          null: false

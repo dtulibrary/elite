@@ -31,6 +31,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'sprockets-rails', '~> 2.3.3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -52,7 +53,7 @@ end
 
 gem 'blacklight', '~> 5.16'
 gem 'blacklight-gallery'
-gem 'blacklight-spotlight', github: 'ronan-mch/spotlight', branch: 'dev'
+gem 'blacklight-spotlight', github: 'ronan-mch/spotlight', branch: 'dev2'
 gem 'dtu_blacklight_common', github: 'dtulibrary/dtu_blacklight_common', branch: 'blacklight5.16'
 gem 'jettywrapper', '>= 2.0'
 gem 'rsolr', '~> 1.0.6'

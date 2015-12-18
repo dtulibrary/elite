@@ -11,8 +11,8 @@ GIT
 
 GIT
   remote: git://github.com/ronan-mch/spotlight.git
-  revision: ca2993603546a6b88292c36e536fed2fb227f242
-  branch: dev
+  revision: 73b12f6892c7a794c89af5d1998907f4b04a90f9
+  branch: dev2
   specs:
     blacklight-spotlight (0.14.2)
       acts-as-taggable-on (~> 3.5)
@@ -376,10 +376,10 @@ GEM
     sprockets (3.5.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
-    sprockets-rails (3.0.0)
-      actionpack (>= 4.0)
-      activesupport (>= 4.0)
-      sprockets (>= 3.0.0)
+    sprockets-rails (2.3.3)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      sprockets (>= 2.8, < 4.0)
     sqlite3 (1.3.11)
     sshkit (1.8.1)
       net-scp (>= 1.1.2)
@@ -454,6 +454,7 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   sitemap_generator
   spring
+  sprockets-rails (~> 2.3.3)
   sqlite3
   therubyracer
   turbolinks
