@@ -2,7 +2,7 @@
   <% if (current_user && current_user.exhibits.any?) || can?(:manage, Spotlight::Exhibit) %>
   <ul class="nav nav-tabs" role="tablist">
     <li role="presentation" class="active"><a href="#published" aria-controls="published" role="tab" data-toggle="tab"><%= t('.published') %></a></li>
-    <% if can?(:manage, Spotlight::Exhibit) && @exhibits.unpublished.accessible_by(current_ability).any? %>
+    <% if can?(:manage, Spotlight::Exhibit) &&  @exhibits.unpublished.accessible_by(current_ability).any? %>
     <li role="presentation"><a href="#unpublished" aria-controls="unpublished" role="tab" data-toggle="tab"><%= t('.unpublished') %></a></li>
     <% end %>
     <% if current_user && current_user.exhibits.any? %>
@@ -14,23 +14,20 @@
 
     <%= cache cache_key_for_spotlight_exhibits do %>
 
+
         <div role="tabpanel" class="tab-pane active" id="published">
-          <% ActsAsTaggableOn::Tag.all.order('name desc').each do |year_tag| %>
+        <% ActsAsTaggableOn::Tag.all.order('name desc').each do |year_tag| %>
+        <% ids = ActsAsTaggableOn::Tagging.where(taggable_type: 'Spotlight::Exhibit', tag_id: year_tag.id).pluck(:taggable_id) %>
         <h1><%= year_tag.name %></h1>
           <% if @exhibits.published.none? %>
             <%= render 'missing_exhibits' %>
           <% end %>
-          <% count = 0 %>
+
+          <% @exhibits.published.where(id: ids).each_slice(3).each do |row| %>
           <div class="row"><!-- start main content row -->
-          <% Spotlight::Exhibit.tagged_with(year_tag.name).each do |exhibit| %>
-            <% next unless exhibit.published? %>
-            <% if count > 0 && count % 3 == 0 %>
-              </div><div class="row">
-            <% end %>
-            <%= render 'exhibit_card', exhibit: exhibit %>
-            <% count += 1 %>
-          <% end %>
+            <%= render collection: row, partial: 'exhibit_card', as: 'exhibit' %>
           </div>
+          <% end %>
           <% end %>
         </div>
     <% end %>
